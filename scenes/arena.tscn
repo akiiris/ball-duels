@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bnxrcf1bovwl4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cjddi"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cvkqj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_37t0c"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b61ku"]
+normal = Vector2(-1, 0)
+
+[node name="Arena" type="StaticBody2D" unique_id=1065733542]
+collision_mask = 0
+
+[node name="ColT" type="CollisionShape2D" parent="." unique_id=777418259]
+position = Vector2(0, -240)
+shape = SubResource("WorldBoundaryShape2D_cjddi")
+metadata/_edit_lock_ = true
+
+[node name="ColB" type="CollisionShape2D" parent="." unique_id=313087914]
+position = Vector2(0, 240)
+shape = SubResource("WorldBoundaryShape2D_cvkqj")
+metadata/_edit_lock_ = true
+
+[node name="ColL" type="CollisionShape2D" parent="." unique_id=1098092431]
+position = Vector2(-240, 0)
+shape = SubResource("WorldBoundaryShape2D_37t0c")
+metadata/_edit_lock_ = true
+
+[node name="ColR" type="CollisionShape2D" parent="." unique_id=2075363054]
+position = Vector2(240, 0)
+shape = SubResource("WorldBoundaryShape2D_b61ku")
+metadata/_edit_lock_ = true
