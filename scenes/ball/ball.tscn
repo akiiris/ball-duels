@@ -12,3 +12,13 @@ script = ExtResource("1_oqv3d")
 [node name="Col" type="CollisionShape2D" parent="." unique_id=4406282]
 shape = SubResource("CircleShape2D_cjddi")
 metadata/_edit_lock_ = true
+
+[node name="HealthLabel" type="Label" parent="." unique_id=1784159302]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
