@@ -1,3 +1,4 @@
+class_name Ball
 extends CharacterBody2D
 
 var speed: float = 4.0
@@ -16,6 +17,13 @@ func _physics_process(delta: float) -> void:
 	var collision_info: KinematicCollision2D = move_and_collide(movement_vector)
 	if collision_info:
 		movement_vector = movement_vector.bounce(collision_info.get_normal())
+		var collider = collision_info.get_collider()
+		if collider is Ball:
+			ball_collision(collider)
+
+
+func ball_collision(other_ball: Ball):
+	pass
 
 
 func update_health_text() -> void:

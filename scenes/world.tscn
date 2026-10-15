@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnxrcf1bovwl4" path="res://scenes/arena.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://brkr4u278k3fj" path="res://scenes/ball/ball.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dhfmbgopajif2" path="res://scenes/ball/types/contact_ball.tscn" id="3_4wyf3"]
 
 [node name="World" type="Node2D" unique_id=738565079]
 
@@ -13,3 +14,6 @@ metadata/_edit_lock_ = true
 
 [node name="Ball" parent="." unique_id=464241686 instance=ExtResource("2_rwgxs")]
 position = Vector2(-123, -95)
+
+[node name="ContactBall" parent="." unique_id=1447695241 instance=ExtResource("3_4wyf3")]
+position = Vector2(146, 73)
