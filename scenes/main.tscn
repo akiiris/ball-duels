@@ -5,3 +5,4 @@
 [node name="Main" type="Node2D" unique_id=1123692116]
 
 [node name="World" parent="." unique_id=738565079 instance=ExtResource("1_o5qli")]
+metadata/_edit_lock_ = true

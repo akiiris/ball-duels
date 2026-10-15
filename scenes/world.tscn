@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://c8eaot6pcmw1n"]
 
 [ext_resource type="PackedScene" uid="uid://bnxrcf1bovwl4" path="res://scenes/arena.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://brkr4u278k3fj" path="res://scenes/ball/ball.tscn" id="2_rwgxs"]
 
 [node name="World" type="Node2D" unique_id=738565079]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=927761341]
+metadata/_edit_lock_ = true
 
 [node name="Arena" parent="." unique_id=1065733542 instance=ExtResource("1_nnsk1")]
+metadata/_edit_lock_ = true
+
+[node name="Ball" parent="." unique_id=464241686 instance=ExtResource("2_rwgxs")]
+position = Vector2(-123, -95)
