@@ -1,29 +1,26 @@
 class_name Ball
 extends RigidBody2D
 
-var speed: float = 4.0
+var speed: float = 300.0
 var health: int = 100
 
+var ball_collision: bool = false
+
 var movement_vector: Vector2
+var ball_col_new_dir: Vector2
 
 func _ready() -> void:
-	movement_vector = Vector2(randi_range(1,100),randi_range(1,100)).normalized()
-	movement_vector *= speed
+	movement_vector = Vector2(randi_range(-100,100),randi_range(-100,100)).normalized()
+	#apply_central_impulse(movement_vector * speed)
+	linear_velocity = movement_vector * speed
 	
 	update_health_text()
 
 
-func _physics_process(delta: float) -> void:
-	var collision_info: KinematicCollision2D = move_and_collide(movement_vector)
-	if collision_info:
-		movement_vector = movement_vector.bounce(collision_info.get_normal())
-		var collider = collision_info.get_collider()
-		if collider is Ball:
-			ball_collision(collider)
-
-
-func ball_collision(other_ball: Ball):
-	pass
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if ball_collision:
+		ball_collision = false
+		linear_velocity = ball_col_new_dir * speed
 
 
 func update_health_text() -> void:
@@ -33,3 +30,9 @@ func update_health_text() -> void:
 func receive_hit(dmg: int) -> void:
 	health -= dmg
 	update_health_text()
+
+
+func _on_body_entered(body: Node) -> void:
+	if body is Ball:
+		ball_col_new_dir = (global_position - body.global_position).normalized()
+		ball_collision = true
