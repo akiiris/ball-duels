@@ -1,5 +1,5 @@
 class_name Ball
-extends CharacterBody2D
+extends RigidBody2D
 
 var speed: float = 4.0
 var health: int = 100
@@ -7,7 +7,7 @@ var health: int = 100
 var movement_vector: Vector2
 
 func _ready() -> void:
-	movement_vector = Vector2(4,5).normalized()
+	movement_vector = Vector2(randi_range(1,100),randi_range(1,100)).normalized()
 	movement_vector *= speed
 	
 	update_health_text()
